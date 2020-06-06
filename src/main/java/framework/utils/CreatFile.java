@@ -4,23 +4,14 @@ import java.io.File;
 import java.io.IOException;
 import java.text.MessageFormat;
 
-
 /**
- * @program: interface-test-tools
+ * @program: wady
  * @description: TODO
  * @author: YJiang（叶闲）
  * @create: 2020-03-30 00:17
  */
 public class CreatFile {
 
-    /**
-     * *
-     * @Description: 判断文件是否存在, 不存在则创建
-     * @Param: [file]
-     * @return: void
-     * @Author: YJiang(叶闲)
-     * @DateTimeFormat: 2020/3/30
-     */
     public static void checkFileExistsToCreate(File file) {
 
         String fileParentPath = file.getParent();

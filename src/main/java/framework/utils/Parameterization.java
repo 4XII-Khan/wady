@@ -11,29 +11,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.jayway.jsonpath.JsonPath;
 import org.apache.commons.lang3.StringUtils;
 
-/**
- * @program: interface-test-tools
- *
- * @description: TODO
- *
- * @author:
- *
- * @create: 2020-06-04 16:48
- */
 public class Parameterization {
 
-    /**
-     **
-     * @Description: 多个参数列表的元素排列组合
-     *
-     * @Param: [inputList, beginIndex, parameterList, outputList]
-     *
-     * @return: void
-     *
-     * @Author: YJiang(叶闲)
-     *
-     * @DateTimeFormat: 2020/6/3
-     */
     public static void parameterCombination(ArrayList<ArrayList<HashMap<String, String>>> inputList, int beginIndex,
         ArrayList<HashMap<String, String>> parameterList, ArrayList<ArrayList<HashMap<String, String>>> outputList) {
         // 判断是否完成一次参数组合
@@ -54,8 +33,6 @@ public class Parameterization {
             parameterCombination(inputList, beginIndex + 1, parameterList, outputList);
         }
     }
-
-
 
     public static ArrayList<JSONObject> permutationCombination(JSONObject paramsObj) {
 
@@ -111,29 +88,14 @@ public class Parameterization {
 
     }
 
-    /**
-    **
-    * @Description: 顺序组合
-    *    
-    * @Param: [paramsObj]
-    *    
-    * @return: java.util.ArrayList<com.alibaba.fastjson.JSONObject>
-    *    
-    * @Author: YJiang(叶闲)
-    *    
-    * @DateTimeFormat: 2020/6/5
-    */
     public static ArrayList<JSONObject> sequentialComposition(JSONObject paramsObj) {
         String parameterizationString = JSON.toJSONString(paramsObj.get("parameterization"));
         JSONObject parameterizationJson = JSONObject.parseObject(parameterizationString);
 
         String parameterString = JSON.toJSONString(paramsObj.get("parameter"));
         JSONObject parameterJson = JSONObject.parseObject(parameterString);
-
         ArrayList<ArrayList<HashMap<String, String>>> paramList = new ArrayList<>();
-
         int maxLength = 0;
-
         for (String key : parameterizationJson.keySet()) {
 
             ArrayList<HashMap<String, String>> tmp = new ArrayList<>();
@@ -146,7 +108,6 @@ public class Parameterization {
                 map.put(key, ignore);
                 tmp.add(map);
             }
-
             paramList.add(tmp);
         }
         
@@ -154,7 +115,6 @@ public class Parameterization {
 
         for (int index = 0; index < maxLength; index++) {
             ArrayList<HashMap<String, String>> disposable = new ArrayList<>();
-
             for (ArrayList<HashMap<String, String>> arrayList : paramList) {
                 if (index < arrayList.size()) {
                     disposable.add(arrayList.get(index));
@@ -171,7 +131,6 @@ public class Parameterization {
                         .jsonString();
                 }
             }
-
             JSONObject sequentialJson = JSONObject.parseObject(parameterString);
             paramsObj.put("parameter",sequentialJson);
 
@@ -187,7 +146,6 @@ public class Parameterization {
 
     public static ArrayList<JSONObject> parameterComposition(JSONObject paramsObj) {
         String parameterizationString = null;
-
         if(paramsObj.containsKey("parameterCombination")){
             parameterizationString = JSON.toJSONString(paramsObj.get("parameterCombination"));
         }

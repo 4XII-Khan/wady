@@ -43,7 +43,6 @@ public class ResultDetail {
         return retMsg;
     }
 
-
     @Override
     public String toString() {
         StringBuffer stringBuffer = new StringBuffer("CompareBaseResult{");

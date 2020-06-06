@@ -5,9 +5,9 @@ import java.lang.reflect.Method;
 import org.testng.annotations.DataProvider;
 
 /**
- * @program: Duck
+ * @program: wady
  * @description: TODO
- * @author: YJiang（叶闲）
+ * @author: YJiang
  * @create: 2020-01-31 16:59
  */
 public abstract class AbstractAiTestFramework  {

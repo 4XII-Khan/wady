@@ -2,11 +2,10 @@ package framework.utils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * @program: interface-test-tools
+ * @program: wady
  *
  * @description: TODO
  *
@@ -17,13 +16,9 @@ import org.apache.commons.lang3.StringUtils;
 public class ResultCheckWay {
     public static JSONObject checkWay(JSONObject paramsObj) {
         String precision = null;
-
         String key = null;
-
         String way = null;
-
         JSONObject jsonReturn = new JSONObject();
-
         if (paramsObj.containsKey("check")) {
             String check = JSON.toJSONString(paramsObj.get("check"));
             JSONObject jsonCheck = JSONObject.parseObject(check);
@@ -33,7 +28,6 @@ public class ResultCheckWay {
             if (jsonCheck.containsKey("key")){
                 key = jsonCheck.get("key").toString().trim();
             }
-
             if (jsonCheck.containsKey("way")){
                 way = jsonCheck.get("way").toString().trim();
             }
@@ -47,7 +41,6 @@ public class ResultCheckWay {
             }
         }else {
             jsonReturn.put("precision",true);
-
         }
 
         if (StringUtils.isNotBlank(way)) {
@@ -60,15 +53,12 @@ public class ResultCheckWay {
             }
         }else {
             jsonReturn.put("way","all");
-
         }
 
         if (StringUtils.isNotBlank(key)) {
             jsonReturn.put("key",key);
-
         }else {
             jsonReturn.put("key","");
-
         }
 
         return jsonReturn;

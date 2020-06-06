@@ -18,7 +18,7 @@ import org.yaml.snakeyaml.Yaml;
 import static framework.utils.Parameterization.parameterComposition;
 
 /**
- * @program: Duck
+ * @program: wady
  * @description: 数据提供者工厂类
  * @author: YJiang（叶闲）
  * @create: 2020-01-31 17:02
@@ -95,7 +95,6 @@ public class DataProviderFactory {
             List<Object> tmp = new ArrayList<Object>();
             tmp.add(yamlBlocks.get(n));
             result[n] = tmp.toArray();
-
         }
 
         return result;

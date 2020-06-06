@@ -29,7 +29,7 @@ import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
 import org.apache.http.util.EntityUtils;
 
 /**
- * @program: collectiveintelligence
+ * @program: wady
  * @description: TODO
  * @author: YJiang（叶闲）
  * @create: 2020-04-26 20:33
@@ -53,9 +53,7 @@ public class HttpsUtil {
                 java.security.cert.X509Certificate[] paramArrayOfX509Certificate,
                 String paramString) throws CertificateException {
             }
-
             @Override
-
             public void checkServerTrusted(
                 java.security.cert.X509Certificate[] paramArrayOfX509Certificate,
                 String paramString) throws CertificateException {
@@ -132,10 +130,8 @@ public class HttpsUtil {
             // 按指定编码转换结果实体为String类型
             result = EntityUtils.toString(httpEntity, "UTF-8");
         }
-
         //释放链接
         response.close();
-
         return result;
     }
 

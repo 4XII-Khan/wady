@@ -7,9 +7,7 @@ import java.util.List;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.JSONArray;
-
 import org.apache.commons.lang3.StringUtils;
-
 import static framework.utils.ResultCheckWay.checkWay;
 
 public class CompareJsonUtils {
@@ -25,17 +23,10 @@ public class CompareJsonUtils {
 
     }
 
-    /**
-     * @Description: 更新结果，错误数量计数
-     * @Param: [parameter]
-     * @Author: YJiang
-     * @DateTimeFormat: 2020/3/8
-     */
     private static void updateBaseResult(ResultDetail resultDetail) {
 
         // 错误数量统计
         compareBaseResult.setRetCode(compareBaseResult.getRetCode() + 1);
-
         // 填充 RetValue 错误内容
         if (compareBaseResult.getRetValue() == null) {
             ArrayList<ResultDetail> resultDetailArrayList = new ArrayList<ResultDetail>();
@@ -51,15 +42,6 @@ public class CompareJsonUtils {
 
     }
 
-    /**
-     * *
-     *
-     * @Description: 精确比较
-     * @Param: [actualString, expectString, prefix]
-     * @return: void
-     * @Author: YJiang(叶闲)
-     * @DateTimeFormat: 2020/6/3
-     */
     private static void preciseComparisons(String actualString, String expectString, String prefix) {
         if (!expectString.equals(actualString)) {
             ResultDetail resultDetail = new ResultDetail(prefix, actualString, expectString,
@@ -73,15 +55,6 @@ public class CompareJsonUtils {
         }
     }
 
-    /**
-     * *
-     *
-     * @Description: 模糊比较
-     * @Param: [actualString, expectString, prefix]
-     * @return: void
-     * @Author: YJiang(叶闲)
-     * @DateTimeFormat: 2020/6/3
-     */
     private static void fuzzyComparisons(String actualString, String expectString, String prefix) {
 
         if (!StringUtils.isNotBlank(actualString)) {
@@ -104,23 +77,12 @@ public class CompareJsonUtils {
         }
     }
 
-    /**
-     * @Description: 字符串比较
-     * @Param: [parameter] ignoreType 忽略自己：true 忽略其他 fasle
-     * @return: void
-     * @Author: YJiang
-     * @DateTimeFormat: 2020/3/8
-     */
     private static void compareJson(String actualString, String expectString, String key, String prefix,
         String ignore, boolean ignoreType, boolean compareType) {
-
         boolean status = false;
-
         if (StringUtils.isNotBlank(ignore)) {
             List<String> listIgnore = Arrays.asList(ignore.split(","));
-
             status = listIgnore.contains(key);
-
             if (status) {
                 // 忽略其他 只校验ignore中key
                 if (!ignoreType) {
@@ -131,7 +93,6 @@ public class CompareJsonUtils {
                 if (ignoreType) {
                     compareType(actualString, expectString, prefix, compareType);
                 }
-
             }
         } else {
             // 全校验
@@ -141,13 +102,6 @@ public class CompareJsonUtils {
 
     }
 
-    /**
-     * @Description: JSONObject 比较
-     * @Param: [parameter]
-     * @return: void
-     * @Author: YJiang
-     * @DateTimeFormat: 2020/3/8
-     */
     private static void compareJson(JSONObject actualJson, JSONObject expectJson, String key, String prefix,
         String ignore, boolean ignoreType, boolean compareType) {
         if (StringUtils.isBlank(prefix)) {
@@ -155,28 +109,18 @@ public class CompareJsonUtils {
         } else {
             prefix = prefix + ".";
         }
-
         for (String s : expectJson.keySet()) {
             key = s;
             compareJson(actualJson.get(key), expectJson.get(key), key, prefix + key, ignore, ignoreType, compareType);
         }
     }
 
-    /**
-     * @Description: JSONArray 比较
-     * @Param: [parameter]
-     * @return: void
-     * @Author: YJiang
-     * @DateTimeFormat: 2020/3/8
-     */
     private static void compareJson(JSONArray actualJsonArray, JSONArray expectJsonArray, String key, String prefix,
         String ignore, boolean ignoreType, boolean compareType) {
         if (actualJsonArray != null && expectJsonArray != null) {
             if (actualJsonArray.size() == expectJsonArray.size()) {
                 Iterator iteratorActualJsonArray = actualJsonArray.iterator();
-                if (StringUtils.isBlank(prefix)) {
-                    prefix = "";
-                }
+                if (StringUtils.isBlank(prefix)) { prefix = ""; }
                 int num = 0;
                 for (Object o : expectJsonArray) {
                     compareJson(iteratorActualJsonArray.next(), o, key, prefix + "[" + num + "]", ignore, ignoreType,
@@ -213,13 +157,6 @@ public class CompareJsonUtils {
 
     }
 
-    /**
-     * @Description: Object 比较
-     * @Param: [parameter]
-     * @return: void
-     * @Author: YJiang
-     * @DateTimeFormat: 2020/3/8
-     */
     private static void compareJson(Object actualJson, Object expectJson, String key, String prefix, String ignore,
         boolean ignoreType, boolean compareType) {
         if (actualJson != null && expectJson != null) {
@@ -260,15 +197,6 @@ public class CompareJsonUtils {
 
     }
 
-    /**
-     * 非线性安全
-     *
-     * @Description: CompareFactory
-     * @Param: [parameter]
-     * @return: void
-     * @Author: YJiang
-     * @DateTimeFormat: 2020/3/9
-     */
     public static <T> CompareBaseResult compareJsonWithExclude(T actual, T expect, String ignore, boolean compareType) {
         CompareJsonUtils.compareBaseResult = new CompareBaseResult();
         boolean ignoreType = true;
@@ -325,7 +253,6 @@ public class CompareJsonUtils {
 
         return CompareJsonUtils.compareBaseResult;
     }
-
 
     @Deprecated
     public static <T> CompareBaseResult CompareJsonUtilsFactory(T actual, T expect, String ignore) {

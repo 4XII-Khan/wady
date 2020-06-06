@@ -20,7 +20,7 @@ public @interface AiTest {
      * @Description: 测试文件的相对路径
      * @Param: []
      * @return: java.lang.String
-     * @Author: YJiang(叶闲)
+     * @Author: YJiang
      * @DateTimeFormat: 2020/1/31
      */
     public String yamlPath() default "";
@@ -31,7 +31,7 @@ public @interface AiTest {
      * @Description: 仅仅测试某个测试用例
      * @Param: []
      * @return: java.lang.String
-     * @Author: YJiang(叶闲)
+     * @Author: YJiang
      * @DateTimeFormat: 2020/1/31
      */
     public String onlyYaml() default "";
@@ -42,7 +42,7 @@ public @interface AiTest {
      * @Description: 描述 ，暂不使用
      * @Param: []
      * @return: java.lang.String
-     * @Author: YJiang(叶闲)
+     * @Author: YJiang
      * @DateTimeFormat: 2020/1/31
      */
     public String desc() default "";
@@ -53,7 +53,7 @@ public @interface AiTest {
      * @Description: 版本号，更新版本 暂不使用
      * @Param: []
      * @return: java.lang.String
-     * @Author: YJiang(叶闲)
+     * @Author: YJiang
      * @DateTimeFormat: 2020/2/1
      */
     public String version() default "";
