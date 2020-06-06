@@ -1,37 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="89c4471a-9077-44eb-9174-ead7dd29620a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/wady.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/factory/AbstractAiTestFramework.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/factory/AbstractAiTestFramework.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/factory/AiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/factory/AiTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/factory/DataProviderFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/factory/DataProviderFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/utils/CompareBaseResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/utils/CompareBaseResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/utils/CompareJsonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/utils/CompareJsonUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/utils/CreatFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/utils/CreatFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/utils/GetFilesUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/utils/GetFilesUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/utils/HttpsUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/utils/HttpsUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/utils/LoadYaml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/utils/LoadYaml.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/utils/Parameterization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/utils/Parameterization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/utils/ReportUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/utils/ReportUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/utils/ResultCheckWay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/utils/ResultCheckWay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/utils/ResultDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/utils/ResultDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/utils/TypeConversion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/utils/TypeConversion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/framework/factory/DataProviderFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/framework/factory/DataProviderFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/framework/utils/Compare.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/framework/utils/CompareJsonUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/framework/utils/CompareJsonUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/framework/utils/CreatFile.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/framework/utils/CreatFile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/framework/utils/GetFilesUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/framework/utils/GetFilesUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/framework/utils/HttpsUtil$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/framework/utils/HttpsUtil$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/framework/utils/HttpsUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/framework/utils/HttpsUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/framework/utils/LoadYaml.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/framework/utils/LoadYaml.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/framework/utils/Parameterization.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/framework/utils/Parameterization.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/framework/utils/ResultCheckWay.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/framework/utils/ResultCheckWay.class" afterDir="false" />
-    </list>
+    <list default="true" id="89c4471a-9077-44eb-9174-ead7dd29620a" name="Default Changelist" comment="2020年6月7日01:47:47" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,26 +118,45 @@
       <option name="presentableId" value="Default" />
       <updated>1591450349607</updated>
       <workItem from="1591450350966" duration="3749000" />
-      <workItem from="1591464906512" duration="823000" />
+      <workItem from="1591464906512" duration="1143000" />
     </task>
+    <task id="LOCAL-00001" summary="2020年6月7日01:47:47">
+      <created>1591465869216</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1591465869216</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2020年6月7日01:47:47" />
     <option name="LAST_COMMIT_MESSAGE" value="2020年6月7日01:47:47" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1427" y="369" width="763" height="469" key="#Notifications" timestamp="1591465729612">
+    <state x="1427" y="369" width="763" height="469" key="#Notifications" timestamp="1591465902678">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1427" y="369" width="763" height="469" key="#Notifications/0.0.2560.1400@0.0.2560.1400" timestamp="1591465729612" />
-    <state x="1142" y="266" key="CommitChangelistDialog2" timestamp="1591465711723">
+    <state x="1427" y="369" width="763" height="469" key="#Notifications/0.0.2560.1400@0.0.2560.1400" timestamp="1591465902678" />
+    <state x="1142" y="266" key="CommitChangelistDialog2" timestamp="1591465843447">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1142" y="266" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1591465711723" />
+    <state x="1142" y="266" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1591465843447" />
     <state width="1869" height="237" key="GridCell.Tab.0.bottom" timestamp="1591465523477">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -165,6 +173,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="1869" height="237" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591465523477" />
+    <state x="1136" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591466034664">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1136" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591466034664" />
   </component>
   <component name="masterDetails">
     <states>
