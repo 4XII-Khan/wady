@@ -71,7 +71,6 @@ public class Parameterization {
                     // 如果不存在则 跳过
                     if (JSONPath.contains(parameterJson, setKey)){
                         JSONPath.set(parameterJson, setKey, entry.getValue());
-
                     }
 //                        JSONPath.contains(paramsObj, setKey);
 //                    JSONPath.set(parameterJson, setKey, entry.getValue());
@@ -98,7 +97,6 @@ public class Parameterization {
         String parameterizationString = JSON.toJSONString(paramsObj.get("parameterization"));
         JSONObject parameterizationJson = JSONObject.parseObject(parameterizationString);
         String parameterString = JSON.toJSONString(paramsObj.get("parameter"));
-        JSONObject parameterJson = JSONObject.parseObject(parameterString);
         ArrayList<ArrayList<HashMap<String, String>>> paramList = new ArrayList<>();
         int maxLength = 0;
         for (String key : parameterizationJson.keySet()) {
@@ -111,6 +109,8 @@ public class Parameterization {
                 map.put(key, ignore);
                 tmp.add(map);
             }
+            System.out.println(tmp.toString());
+
             paramList.add(tmp);
         }
         ArrayList<ArrayList<HashMap<String, String>>> outputArrayLists = new ArrayList<>();
@@ -123,16 +123,28 @@ public class Parameterization {
             }
             outputArrayLists.add(disposable);
         }
+        System.out.println(outputArrayLists.toString());
+
         ArrayList<JSONObject> yamlBlock = new ArrayList<>();
+        int index = 0;
         for (ArrayList<HashMap<String, String>> p : outputArrayLists) {
+            JSONObject parameterJson = JSONObject.parseObject(parameterString);
+            index++;
+            System.out.println(index);
             for (HashMap<String, String> kv : p) {
                 for (Map.Entry<String, String> entry : kv.entrySet()) {
-                    parameterString = JsonPath.parse(parameterString).set("$." + entry.getKey(), entry.getValue())
-                        .jsonString();
+//                    parameterString = JsonPath.parse(parameterString).set("$." + entry.getKey(), entry.getValue())
+//                        .jsonString();
+                    System.out.println(entry.getKey()+":"+ entry.getValue());
+                    if (JSONPath.contains(parameterJson, entry.getKey())){
+                        JSONPath.set(parameterJson, entry.getKey(), entry.getValue());
+                    }
                 }
             }
-            JSONObject sequentialJson = JSONObject.parseObject(parameterString);
-            paramsObj.put("parameter",sequentialJson);
+            System.out.println(parameterJson.toJSONString());
+
+//            JSONObject sequentialJson = JSONObject.parseObject(parameterString);
+            paramsObj.put("parameter",parameterJson);
             JSONObject paramsObjClone = (JSONObject) paramsObj.clone();
             paramsObjClone.remove("parameterization");
             yamlBlock.add(paramsObjClone);
@@ -143,7 +155,7 @@ public class Parameterization {
     public static ArrayList<JSONObject> parameterComposition(JSONObject paramsObj) {
         String parameterizationString = null;
         if(paramsObj.containsKey("parameterCombination")){
-            parameterizationString = JSON.toJSONString(paramsObj.get("parameterCombination"));
+            parameterizationString = paramsObj.get("parameterCombination").toString();
         }
         if(StringUtils.isNotBlank(parameterizationString)){
             if ("sequential".equals(parameterizationString)){

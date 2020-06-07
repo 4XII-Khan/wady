@@ -26,14 +26,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89c4471a-9077-44eb-9174-ead7dd29620a" name="Default Changelist" comment="2020年6月7日01:47:47">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/framework/utils/Parameterization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/utils/Parameterization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/frameworkTest/CompareJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/frameworkTest/CompareJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareIntegerTest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareIntegerTest.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareJsonArrayTest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareJsonArrayTest.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareJsonObjectTest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareJsonObjectTest.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareLongTest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareLongTest.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/frameworkTest/CompareJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/frameworkTest/CompareJsonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareIntegerTest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/yaml/CompareJsonTest/compareIntegerTest.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareJsonArrayTest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/yaml/CompareJsonTest/compareJsonArrayTest.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareJsonObjectTest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/yaml/CompareJsonTest/compareJsonObjectTest.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareLongTest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/yaml/CompareJsonTest/compareLongTest.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareStringTest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/yaml/CompareJsonTest/compareStringTest.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/framework/utils/Parameterization.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/framework/utils/Parameterization.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/frameworkTest/CompareJson.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,8 +76,8 @@
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.CompareJson.compareStringTest">
-    <configuration name="CompareJson.compareIntegerTest" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.CompareJsonTest.compareJsonObjectTest">
+    <configuration name="CompareJsonTest.compareIntegerTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="wady" />
       <extension name="coverage">
         <pattern>
@@ -83,7 +86,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="frameworkTest" />
-      <option name="MAIN_CLASS_NAME" value="frameworkTest.CompareJson" />
+      <option name="MAIN_CLASS_NAME" value="frameworkTest.CompareJsonTest" />
       <option name="METHOD_NAME" value="compareIntegerTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -92,7 +95,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CompareJson.compareJsonArrayTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CompareJsonTest.compareJsonArrayTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="wady" />
       <extension name="coverage">
         <pattern>
@@ -101,7 +104,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="frameworkTest" />
-      <option name="MAIN_CLASS_NAME" value="frameworkTest.CompareJson" />
+      <option name="MAIN_CLASS_NAME" value="frameworkTest.CompareJsonTest" />
       <option name="METHOD_NAME" value="compareJsonArrayTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -110,7 +113,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CompareJson.compareJsonObjectTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CompareJsonTest.compareJsonObjectTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="wady" />
       <extension name="coverage">
         <pattern>
@@ -119,7 +122,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="frameworkTest" />
-      <option name="MAIN_CLASS_NAME" value="frameworkTest.CompareJson" />
+      <option name="MAIN_CLASS_NAME" value="frameworkTest.CompareJsonTest" />
       <option name="METHOD_NAME" value="compareJsonObjectTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -128,7 +131,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CompareJson.compareLongTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CompareJsonTest.compareLongTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="wady" />
       <extension name="coverage">
         <pattern>
@@ -137,7 +140,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="frameworkTest" />
-      <option name="MAIN_CLASS_NAME" value="frameworkTest.CompareJson" />
+      <option name="MAIN_CLASS_NAME" value="frameworkTest.CompareJsonTest" />
       <option name="METHOD_NAME" value="compareLongTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -146,7 +149,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CompareJson.compareStringTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CompareJsonTest.compareStringTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="wady" />
       <extension name="coverage">
         <pattern>
@@ -155,7 +158,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="frameworkTest" />
-      <option name="MAIN_CLASS_NAME" value="frameworkTest.CompareJson" />
+      <option name="MAIN_CLASS_NAME" value="frameworkTest.CompareJsonTest" />
       <option name="METHOD_NAME" value="compareStringTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -165,19 +168,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="TestNG.CompareJson.compareJsonObjectTest" />
-      <item itemvalue="TestNG.CompareJson.compareJsonArrayTest" />
-      <item itemvalue="TestNG.CompareJson.compareIntegerTest" />
-      <item itemvalue="TestNG.CompareJson.compareLongTest" />
-      <item itemvalue="TestNG.CompareJson.compareStringTest" />
+      <item itemvalue="TestNG.CompareJsonTest.compareJsonObjectTest" />
+      <item itemvalue="TestNG.CompareJsonTest.compareJsonArrayTest" />
+      <item itemvalue="TestNG.CompareJsonTest.compareIntegerTest" />
+      <item itemvalue="TestNG.CompareJsonTest.compareLongTest" />
+      <item itemvalue="TestNG.CompareJsonTest.compareStringTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.CompareJson.compareStringTest" />
-        <item itemvalue="TestNG.CompareJson.compareLongTest" />
-        <item itemvalue="TestNG.CompareJson.compareIntegerTest" />
-        <item itemvalue="TestNG.CompareJson.compareJsonArrayTest" />
-        <item itemvalue="TestNG.CompareJson.compareJsonObjectTest" />
+        <item itemvalue="TestNG.CompareJsonTest.compareJsonObjectTest" />
+        <item itemvalue="TestNG.CompareJsonTest.compareStringTest" />
+        <item itemvalue="TestNG.CompareJsonTest.compareLongTest" />
+        <item itemvalue="TestNG.CompareJsonTest.compareIntegerTest" />
+        <item itemvalue="TestNG.CompareJsonTest.compareJsonArrayTest" />
       </list>
     </recent_temporary>
   </component>
@@ -193,7 +196,7 @@
       <updated>1591450349607</updated>
       <workItem from="1591450350966" duration="3749000" />
       <workItem from="1591464906512" duration="1433000" />
-      <workItem from="1591507511775" duration="7065000" />
+      <workItem from="1591507511775" duration="18773000" />
     </task>
     <task id="LOCAL-00001" summary="2020年6月7日01:47:47">
       <created>1591465869216</created>
@@ -209,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591466216931</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="2020年6月7日01:47:47">
+      <created>1591516701941</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1591516701942</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,26 +250,30 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1142" y="266" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1591465843447" />
-    <state width="2289" height="398" key="GridCell.Tab.0.bottom" timestamp="1591516369720">
+    <state width="1735" height="497" key="GridCell.Tab.0.bottom" timestamp="1591548239716">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2289" height="398" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591516369720" />
-    <state width="2289" height="398" key="GridCell.Tab.0.center" timestamp="1591516369720">
+    <state width="1735" height="497" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591548239716" />
+    <state width="1735" height="497" key="GridCell.Tab.0.center" timestamp="1591548239716">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2289" height="398" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591516369720" />
-    <state width="2289" height="398" key="GridCell.Tab.0.left" timestamp="1591516369720">
+    <state width="1735" height="497" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591548239716" />
+    <state width="1735" height="497" key="GridCell.Tab.0.left" timestamp="1591548239715">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2289" height="398" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591516369720" />
-    <state width="2289" height="398" key="GridCell.Tab.0.right" timestamp="1591516369720">
+    <state width="1735" height="497" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591548239715" />
+    <state width="1735" height="497" key="GridCell.Tab.0.right" timestamp="1591548239716">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2289" height="398" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591516369720" />
-    <state x="1136" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591466219001">
+    <state width="1735" height="497" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591548239716" />
+    <state x="1136" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591516706662">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1136" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591466219001" />
+    <state x="1136" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591516706662" />
+    <state x="483" y="493" key="git4idea.merge.GitPullDialog" timestamp="1591516671590">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="483" y="493" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591516671590" />
   </component>
   <component name="masterDetails">
     <states>

@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import java.util.Map;
 
-public class CompareJson extends AbstractAiTestFramework {
+public class CompareJsonTest extends AbstractAiTestFramework {
 
 
     @Test(dataProvider = "TestDataProvider")
@@ -25,10 +25,8 @@ public class CompareJson extends AbstractAiTestFramework {
 
         // 方法调用,此处省略. 假设 jsonObject1 同样作为方法返回结果.
 
-
         // 获取期望结果
         JSONObject expectResult = (JSONObject) JSONPath.eval(paramsObj,"$.expectResult.expect");
-
 
 
         // 统一的结果比对接口, 根据配置实现即可灵活选择、过滤比对方式 及精确、模糊校验角度.
@@ -84,7 +82,8 @@ public class CompareJson extends AbstractAiTestFramework {
         Assert.assertEquals(compareBaseResult.getRetCode(), 0,
                 String.valueOf(compareBaseResult.getRetValue()));
 
-        System.out.println("比对结果：" + JSONObject.toJSONString(compareBaseResult));    }
+        System.out.println("比对结果：" + JSONObject.toJSONString(compareBaseResult));
+    }
 
     @Test(dataProvider = "TestDataProvider")
     public void compareIntegerTest(Map<String, Object> parameter) {
