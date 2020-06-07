@@ -1,3 +1,29 @@
 ---
-JsonArrayA: [{"name":"Jack","id":12,"desc":"男生"},{"name":"Tony","id":14,"desc":"可爱"}]
-JsonArrayB: [{"name":"Json","id":121,"desc":"女生"},{"name":"Taya","id":14,"desc":"可爱"}]
+testcase: 验证 XX 功能是否符合预期
+
+# 参数化配置,针对parameter节点下，支持.链接，支持对某个节点下的数组特定索引
+parameterization:
+  JsonArrayDemo[0].name: yexian,yjiang
+  JsonArrayDemo[0].desc: 男生, 女生
+  JsonArrayDemo[1].desc: 男, 女
+
+# 参数组合方式,非必填，支持顺序和排列组合，默认排列组合
+parameterCombination:
+
+# 参数配置
+parameter:
+  JsonArrayDemo: [{"name":"Jack","id":12,"desc":"男生"},{"name":"Tony","id":14,"desc":"可爱"}]
+  string: yexian
+  integer: 1
+# 期望结果配置
+expectResult:
+  expect: [{"name":"Jack","id":12,"desc":"男生"},{"name":"Tony","id":14,"desc":"可爱"}]
+
+# 校验方式，支持精确比较和非空校验，非必填
+check:
+  # 精度，支持精确校验、模糊经验，默认精准,非必填
+  precision: precision
+  # 关注 key，默认全校验,非必填
+  key: name
+  # 校验方式：选择校验、过滤校验、默认全校验,非必填
+  way: choose

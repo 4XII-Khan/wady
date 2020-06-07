@@ -8,8 +8,11 @@ import java.util.Map;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
+import com.alibaba.fastjson.JSONPath;
 import com.jayway.jsonpath.JsonPath;
 import org.apache.commons.lang3.StringUtils;
+
+import javax.swing.plaf.synth.SynthLookAndFeel;
 
 public class Parameterization {
 
@@ -39,6 +42,7 @@ public class Parameterization {
         String parameterizationString = JSON.toJSONString(paramsObj.get("parameterization"));
         JSONObject parameterizationJson = JSONObject.parseObject(parameterizationString);
         String parameterString = JSON.toJSONString(paramsObj.get("parameter"));
+
         ArrayList<ArrayList<HashMap<String, String>>> paramList = new ArrayList<>();
         for (String i : parameterizationJson.keySet()) {
             ArrayList<HashMap<String, String>> tmp = new ArrayList<>();
@@ -55,17 +59,32 @@ public class Parameterization {
         ArrayList<ArrayList<HashMap<String, String>>> out = new ArrayList<>();
         parameterCombination(paramList, 0, parameterList, out);
         ArrayList<JSONObject> yamlBlock = new ArrayList<>();
+        int i = 0 ;
         for (ArrayList<HashMap<String, String>> p : out) {
+            JSONObject  parameterJson = JSONObject.parseObject(parameterString);
+            i ++;
+            System.out.println(i);
             for (HashMap<String, String> kv : p) {
                 for (Map.Entry<String, String> entry : kv.entrySet()) {
-                    System.out.println("$."+entry.getKey());
-                    parameterString =
-                        JsonPath.parse(parameterString).set("$."+entry.getKey(),
-                            entry.getValue()).jsonString();
+                    String setKey = "$."+entry.getKey();
+                    System.out.println("$."+entry.getKey()+":"+entry.getValue());
+                    // 如果不存在则 跳过
+                    if (JSONPath.contains(parameterJson, setKey)){
+                        JSONPath.set(parameterJson, setKey, entry.getValue());
+
+                    }
+//                        JSONPath.contains(paramsObj, setKey);
+//                    JSONPath.set(parameterJson, setKey, entry.getValue());
+//                    parameterString =
+//                        JsonPath.parse(parameterString).set("$."+entry.getKey(),
+//                            entry.getValue()).jsonString();
+
                 }
             }
-            JSONObject parameterJson = JSONObject.parseObject(parameterString);
+//            JSONObject parameterJson = JSONObject.parseObject(parameterString);
             paramsObj.put("parameter",parameterJson);
+            System.out.println(parameterJson.toJSONString());
+
             JSONObject paramsObjClone = (JSONObject) paramsObj.clone();
             paramsObjClone.remove("parameterization");
             yamlBlock.add(paramsObjClone);

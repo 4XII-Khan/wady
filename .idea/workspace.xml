@@ -10,6 +10,11 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
     </expand>
     <select>
       <path>
@@ -20,7 +25,16 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89c4471a-9077-44eb-9174-ead7dd29620a" name="Default Changelist" comment="2020年6月7日01:47:47" />
+    <list default="true" id="89c4471a-9077-44eb-9174-ead7dd29620a" name="Default Changelist" comment="2020年6月7日01:47:47">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/framework/utils/Parameterization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/utils/Parameterization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/frameworkTest/CompareJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/frameworkTest/CompareJson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareIntegerTest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareIntegerTest.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareJsonArrayTest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareJsonArrayTest.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareJsonObjectTest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareJsonObjectTest.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareLongTest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareLongTest.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,8 +73,8 @@
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.CompareJson.compareJsonObjectTest">
-    <configuration name="CompareJson.compareJsonObjectTest (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.CompareJson.compareStringTest">
+    <configuration name="CompareJson.compareIntegerTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="wady" />
       <extension name="coverage">
         <pattern>
@@ -70,7 +84,25 @@
       </extension>
       <option name="PACKAGE_NAME" value="frameworkTest" />
       <option name="MAIN_CLASS_NAME" value="frameworkTest.CompareJson" />
-      <option name="METHOD_NAME" value="compareJsonObjectTest" />
+      <option name="METHOD_NAME" value="compareIntegerTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CompareJson.compareJsonArrayTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="wady" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="frameworkTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="frameworkTest" />
+      <option name="MAIN_CLASS_NAME" value="frameworkTest.CompareJson" />
+      <option name="METHOD_NAME" value="compareJsonArrayTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -96,14 +128,56 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CompareJson.compareLongTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="wady" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="frameworkTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="frameworkTest" />
+      <option name="MAIN_CLASS_NAME" value="frameworkTest.CompareJson" />
+      <option name="METHOD_NAME" value="compareLongTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CompareJson.compareStringTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="wady" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="frameworkTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="frameworkTest" />
+      <option name="MAIN_CLASS_NAME" value="frameworkTest.CompareJson" />
+      <option name="METHOD_NAME" value="compareStringTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="TestNG.CompareJson.compareJsonObjectTest" />
-      <item itemvalue="TestNG.CompareJson.compareJsonObjectTest (1)" />
+      <item itemvalue="TestNG.CompareJson.compareJsonArrayTest" />
+      <item itemvalue="TestNG.CompareJson.compareIntegerTest" />
+      <item itemvalue="TestNG.CompareJson.compareLongTest" />
+      <item itemvalue="TestNG.CompareJson.compareStringTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.CompareJson.compareStringTest" />
+        <item itemvalue="TestNG.CompareJson.compareLongTest" />
+        <item itemvalue="TestNG.CompareJson.compareIntegerTest" />
+        <item itemvalue="TestNG.CompareJson.compareJsonArrayTest" />
         <item itemvalue="TestNG.CompareJson.compareJsonObjectTest" />
-        <item itemvalue="TestNG.CompareJson.compareJsonObjectTest (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -118,7 +192,8 @@
       <option name="presentableId" value="Default" />
       <updated>1591450349607</updated>
       <workItem from="1591450350966" duration="3749000" />
-      <workItem from="1591464906512" duration="1143000" />
+      <workItem from="1591464906512" duration="1433000" />
+      <workItem from="1591507511775" duration="7065000" />
     </task>
     <task id="LOCAL-00001" summary="2020年6月7日01:47:47">
       <created>1591465869216</created>
@@ -127,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591465869216</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="2020年6月7日01:47:47">
+      <created>1591466216931</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1591466216931</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,6 +225,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2020年6月7日01:47:47" />
@@ -157,26 +240,26 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1142" y="266" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1591465843447" />
-    <state width="1869" height="237" key="GridCell.Tab.0.bottom" timestamp="1591465523477">
+    <state width="2289" height="398" key="GridCell.Tab.0.bottom" timestamp="1591516369720">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1869" height="237" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591465523477" />
-    <state width="1869" height="237" key="GridCell.Tab.0.center" timestamp="1591465523477">
+    <state width="2289" height="398" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591516369720" />
+    <state width="2289" height="398" key="GridCell.Tab.0.center" timestamp="1591516369720">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1869" height="237" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591465523477" />
-    <state width="1869" height="237" key="GridCell.Tab.0.left" timestamp="1591465523477">
+    <state width="2289" height="398" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591516369720" />
+    <state width="2289" height="398" key="GridCell.Tab.0.left" timestamp="1591516369720">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1869" height="237" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591465523477" />
-    <state width="1869" height="237" key="GridCell.Tab.0.right" timestamp="1591465523477">
+    <state width="2289" height="398" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591516369720" />
+    <state width="2289" height="398" key="GridCell.Tab.0.right" timestamp="1591516369720">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1869" height="237" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591465523477" />
-    <state x="1136" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591466034664">
+    <state width="2289" height="398" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591516369720" />
+    <state x="1136" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591466219001">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1136" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591466034664" />
+    <state x="1136" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591466219001" />
   </component>
   <component name="masterDetails">
     <states>

@@ -1,0 +1,25 @@
+---
+testcase: 验证 XX 功能是否符合预期
+
+# 参数化配置,针对parameter节点下，支持.链接，支持对某个节点下的数组特定索引
+parameterization:
+  long: 1,2,3,4,5
+
+# 参数组合方式,非必填，支持顺序和排列组合，默认排列组合
+parameterCombination:
+
+# 参数配置
+parameter:
+  long: 1
+# 期望结果配置
+expectResult:
+  expect: 1
+
+# 校验方式，支持精确比较和非空校验，非必填
+check:
+  # 精度，支持精确校验、模糊经验，默认精准,非必填
+  precision: precision
+  # 关注 key，默认全校验,非必填
+  key:
+  # 校验方式：选择校验、过滤校验、默认全校验,非必填
+  way: choose

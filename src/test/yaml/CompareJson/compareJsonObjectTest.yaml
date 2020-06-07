@@ -3,10 +3,9 @@ testcase: 验证 XX 功能是否符合预期
 
 # 参数化配置,针对parameter节点下，支持.链接，支持对某个节点下的数组特定索引
 parameterization:
-  jsonObjecta.Id: 12,22
-  jsonObjecta.code: Connect,NotConnect
-  jsonObjecta.type: DEVICE,NONE
-  jsonObjecta.grade[0]: 99,88
+  jsonObjectDemo.Id: 12,22
+  jsonObjectDemo.sentenceDesc.desc: Connect,NotConnect
+  jsonObjectDemo.grade[0]: 99,88
   string: ye,xian
   integer: 4,5
 # 参数组合方式,非必填，支持顺序和排列组合，默认排列组合
@@ -14,12 +13,12 @@ parameterCombination:
 
 # 参数配置
 parameter:
-  jsonObjecta: {"Id":"244","code":"Connect","name":"连接","sentenceDesc":"","type":"DEVICE","grade":[1,2,3,4]}
+  jsonObjectDemo: {"Id":"244","code":"Connect","name":"连接","sentenceDesc":{"desc":"","sentence":"你好"},"type":"DEVICE","grade":[1,2,3,4]}
   string: yexian
   integer: 1
 # 期望结果配置
 expectResult:
-  expect: {"Id":"244","code":"Connect","name":"连接","sentenceDesc":"","type":"DEVICE","grade":[1,2,3,4]}
+  expect: {"Id":"244","code":"Connect","name":"连接","sentenceDesc":{"desc":"描述","sentence":"你好"},"type":"DEVICE","grade":[1,2,3,4]}
 
 # 校验方式，支持精确比较和非空校验，非必填
 check:
@@ -29,35 +28,6 @@ check:
   key:
   # 校验方式：选择校验、过滤校验、默认全校验,非必填
   way: choose
-
-
----
-testcase: 验证 XXX 功能是否符合预期
-# 参数化配置，针对parameter节点下，支持.链接，支持对某个节点下的数组特定索引
-parameterization:
-  jsonObjectb.Id: 12,22,33
-  jsonObjectb.code: Connect,NotConnect
-  jsonObjectb.type: DEVICE,NONE
-  string: ye,xian
-  integer: 4,5
-# 参数组合方式
-parameterCombination:
-# 参数配置
-parameter:
-  jsonObjecta: {"Id":"244","code":"Connect","name":"连接","sentenceDesc":"","type":"DEVICE","grade":[1,2,3,4]}
-
-# 期望结果配置
-expectResult:
-  expect: {"Id":"244","code":"NotConnect","name":"拒绝连接","sentenceDesc":"描述","type":"DEVICE","grade":[1,2,3,4]}
-
-# 校验方式，支持精确比较和非空校验
-check:
-  # 精度，支持精确校验、模糊经验，默认精准
-  precision: fuzzy
-  # 关注 key，默认全校验
-  key: sentenceDesc
-  # 校验方式：选择校验、过滤校验、默认全校验
-  way:
 
 ---
 testcase: 验证 XXX 功能是否符合预期
@@ -70,11 +40,3 @@ parameter:
 # 期望结果配置
 expectResult:
   expect: {"Id":"11111","code":"Connect","name":"连接","sentenceDesc":"","type":"DEVICE","grade":[1,2,3,4]}
-# 校验方式，支持精确比较和非空校验
-check:
-  # 精度，支持精确校验、模糊经验，默认精准
-  precision:
-  # 关注 key，默认全校验
-  key: name,type
-  # 校验方式：选择校验、过滤校验、默认全校验
-  way: choose
