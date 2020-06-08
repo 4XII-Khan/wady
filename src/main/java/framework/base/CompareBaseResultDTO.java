@@ -1,4 +1,4 @@
-package framework.utils;
+package framework.base;
 
 import java.io.Serializable;
 import java.util.List;
@@ -10,24 +10,24 @@ import java.util.List;
  * @create: 2020-04-08 21:40
  */
 
-public class CompareBaseResult implements Serializable {
+public class CompareBaseResultDTO implements Serializable {
     public void setRetCode(int retCode) {
         this.retCode = retCode;
     }
 
     private int retCode;
 
-    public void setRetValue(List<ResultDetail> retValue) {
+    public void setRetValue(List<ResultDetailDTO> retValue) {
         this.retValue = retValue;
     }
 
-    public List<ResultDetail> getRetValue() {
+    public List<ResultDetailDTO> getRetValue() {
         return retValue;
     }
 
-    private List<ResultDetail> retValue;
+    private List<ResultDetailDTO> retValue;
 
-    public CompareBaseResult() {}
+    public CompareBaseResultDTO() {}
 
     public int getRetCode() {
         return retCode;

@@ -1,0 +1,14 @@
+---
+check: 
+   precision: precision or fuzzy
+   key: 
+   way: precision or choose
+expectResult: 
+   expect: 
+parameter: 
+   parameter2: 
+   parameter1: 
+parameterCombination: permutation or sequential
+parameterization: 
+   parameter1.name: Jack,Tim
+testcase: ""

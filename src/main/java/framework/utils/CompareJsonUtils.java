@@ -7,46 +7,47 @@ import java.util.List;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.JSONArray;
+import framework.base.CompareBaseResultDTO;
+import framework.base.ResultDetailDTO;
 import org.apache.commons.lang3.StringUtils;
 import static framework.utils.ResultCheckWay.checkWay;
 
 public class CompareJsonUtils {
 
-    private static CompareBaseResult compareBaseResult;
+    private static CompareBaseResultDTO compareBaseResultDTO;
 
-    public static CompareBaseResult getBaseResult() {
-        return compareBaseResult;
+    public static CompareBaseResultDTO getBaseResult() {
+        return compareBaseResultDTO;
     }
 
-    public static void setBaseResult(CompareBaseResult compareBaseResult) {
-        CompareJsonUtils.compareBaseResult = compareBaseResult;
-
+    public static void setBaseResult(CompareBaseResultDTO compareBaseResultDTO) {
+        CompareJsonUtils.compareBaseResultDTO = compareBaseResultDTO;
     }
 
-    private static void updateBaseResult(ResultDetail resultDetail) {
+    private static void updateBaseResult(ResultDetailDTO resultDetailDTO) {
 
         // 错误数量统计
-        compareBaseResult.setRetCode(compareBaseResult.getRetCode() + 1);
+        compareBaseResultDTO.setRetCode(compareBaseResultDTO.getRetCode() + 1);
         // 填充 RetValue 错误内容
-        if (compareBaseResult.getRetValue() == null) {
-            ArrayList<ResultDetail> resultDetailArrayList = new ArrayList<ResultDetail>();
-            resultDetailArrayList.add(resultDetail);
-            compareBaseResult.setRetValue(resultDetailArrayList);
+        if (compareBaseResultDTO.getRetValue() == null) {
+            ArrayList<ResultDetailDTO> resultDetailDTOArrayList = new ArrayList<ResultDetailDTO>();
+            resultDetailDTOArrayList.add(resultDetailDTO);
+            compareBaseResultDTO.setRetValue(resultDetailDTOArrayList);
         } else {
-            compareBaseResult.getRetValue().add(resultDetail);
+            compareBaseResultDTO.getRetValue().add(resultDetailDTO);
         }
         System.out.println(
-            "\033[1;31m" + "【fail】Key:" + resultDetail.getKey() + "\n     actualJson:" + resultDetail.getActual()
+            "\033[1;31m" + "【fail】Key:" + resultDetailDTO.getKey() + "\n     actualJson:" + resultDetailDTO.getActual()
                 + "\n     expectJson:"
-                + resultDetail.getExpect() + "\033[m");
+                + resultDetailDTO.getExpect() + "\033[m");
 
     }
 
     private static void preciseComparisons(String actualString, String expectString, String prefix) {
         if (!expectString.equals(actualString)) {
-            ResultDetail resultDetail = new ResultDetail(prefix, actualString, expectString,
+            ResultDetailDTO resultDetailDTO = new ResultDetailDTO(prefix, actualString, expectString,
                 "Value Not Equal");
-            updateBaseResult(resultDetail);
+            updateBaseResult(resultDetailDTO);
         } else {
             System.out.println(
                 "\033[1;94m" + "【success】Key:" + prefix + "\n     actualJson:" + actualString
@@ -58,9 +59,9 @@ public class CompareJsonUtils {
     private static void fuzzyComparisons(String actualString, String expectString, String prefix) {
 
         if (!StringUtils.isNotBlank(actualString)) {
-            ResultDetail resultDetail = new ResultDetail(prefix, actualString, expectString,
+            ResultDetailDTO resultDetailDTO = new ResultDetailDTO(prefix, actualString, expectString,
                 "Value is Null");
-            updateBaseResult(resultDetail);
+            updateBaseResult(resultDetailDTO);
         } else {
             System.out.println(
                 "\033[1;94m" + "【success】Key:" + prefix + "\n     actualJson:" + actualString
@@ -133,25 +134,25 @@ public class CompareJsonUtils {
                     "\033[1;31m" + "【fail】Key:" + prefix + "\n     actualJson:" + actualJsonArray.toString() + "\n   "
                         + "  expectJson:"
                         + expectJsonArray.toString() + "\033[m");
-                ResultDetail resultDetail = new ResultDetail(prefix, actualJsonArray.size(), expectJsonArray.size(),
+                ResultDetailDTO resultDetailDTO = new ResultDetailDTO(prefix, actualJsonArray.size(), expectJsonArray.size(),
                     "Length Not Equal");
-                updateBaseResult(resultDetail);
+                updateBaseResult(resultDetailDTO);
             }
         } else {
             if (actualJsonArray == null && expectJsonArray == null) {
-                ResultDetail resultDetail = new ResultDetail(prefix, "在 actualJsonArray 中不存在",
+                ResultDetailDTO resultDetailDTO = new ResultDetailDTO(prefix, "在 actualJsonArray 中不存在",
                     "在 expectJsonArray 中不存在",
                     "Both Not Exist");
 
-                updateBaseResult(resultDetail);
+                updateBaseResult(resultDetailDTO);
             } else if (actualJsonArray == null) {
-                ResultDetail resultDetail = new ResultDetail(prefix, "在 actualJsonArray 中不存在", expectJsonArray,
+                ResultDetailDTO resultDetailDTO = new ResultDetailDTO(prefix, "在 actualJsonArray 中不存在", expectJsonArray,
                     "Other Exist");
-                updateBaseResult(resultDetail);
+                updateBaseResult(resultDetailDTO);
             } else {
-                ResultDetail resultDetail = new ResultDetail(prefix, actualJsonArray, "在 expectJsonArray 中不存在",
+                ResultDetailDTO resultDetailDTO = new ResultDetailDTO(prefix, actualJsonArray, "在 expectJsonArray 中不存在",
                     "Other Exist");
-                updateBaseResult(resultDetail);
+                updateBaseResult(resultDetailDTO);
             }
         }
 
@@ -172,8 +173,8 @@ public class CompareJsonUtils {
                     compareJson(actualJsonToStr, expectJsonToStr, key, prefix, ignore, ignoreType, compareType);
 
                 } catch (Exception e) {
-                    ResultDetail resultDetail = new ResultDetail(prefix, actualJson, expectJson, "String 转换发生异常 Key");
-                    updateBaseResult(resultDetail);
+                    ResultDetailDTO resultDetailDTO = new ResultDetailDTO(prefix, actualJson, expectJson, "String 转换发生异常 Key");
+                    updateBaseResult(resultDetailDTO);
                     e.printStackTrace();
                 }
 
@@ -182,58 +183,58 @@ public class CompareJsonUtils {
             }
         } else {
             if (actualJson == null && expectJson == null) {
-                ResultDetail resultDetail = new ResultDetail(prefix, "在actualJson中不存在", "在expectJson中不存在",
+                ResultDetailDTO resultDetailDTO = new ResultDetailDTO(prefix, "在actualJson中不存在", "在expectJson中不存在",
                     "Both Not Exist");
-                updateBaseResult(resultDetail);
+                updateBaseResult(resultDetailDTO);
             } else if (actualJson == null) {
-                ResultDetail resultDetail = new ResultDetail(prefix, "在actualJson中不存在", expectJson, "Other Exist");
-                updateBaseResult(resultDetail);
+                ResultDetailDTO resultDetailDTO = new ResultDetailDTO(prefix, "在actualJson中不存在", expectJson, "Other Exist");
+                updateBaseResult(resultDetailDTO);
             } else {
-                ResultDetail resultDetail = new ResultDetail(prefix, actualJson, "在expectJson中不存在", "Not Exist");
-                updateBaseResult(resultDetail);
+                ResultDetailDTO resultDetailDTO = new ResultDetailDTO(prefix, actualJson, "在expectJson中不存在", "Not Exist");
+                updateBaseResult(resultDetailDTO);
             }
 
         }
 
     }
 
-    public static <T> CompareBaseResult compareJsonWithExclude(T actual, T expect, String ignore, boolean compareType) {
-        CompareJsonUtils.compareBaseResult = new CompareBaseResult();
+    public static <T> CompareBaseResultDTO compareJsonWithExclude(T actual, T expect, String ignore, boolean compareType) {
+        CompareJsonUtils.compareBaseResultDTO = new CompareBaseResultDTO();
         boolean ignoreType = true;
 
         CompareJsonUtils.compareJson(actual, expect, null, null, ignore, ignoreType, compareType);
 
-        return CompareJsonUtils.compareBaseResult;
+        return CompareJsonUtils.compareBaseResultDTO;
     }
 
-    public static <T> CompareBaseResult compareJsonWithChoose(T actual, T expect, String ignore, boolean compareType) {
-        CompareJsonUtils.compareBaseResult = new CompareBaseResult();
+    public static <T> CompareBaseResultDTO compareJsonWithChoose(T actual, T expect, String ignore, boolean compareType) {
+        CompareJsonUtils.compareBaseResultDTO = new CompareBaseResultDTO();
         boolean ignoreType = false;
 
         CompareJsonUtils.compareJson(actual, expect, null, null, ignore, ignoreType, compareType);
 
-        return CompareJsonUtils.compareBaseResult;
+        return CompareJsonUtils.compareBaseResultDTO;
     }
 
-    public static <T> CompareBaseResult compareJson(T actual, T expect, boolean compareType) {
-        CompareJsonUtils.compareBaseResult = new CompareBaseResult();
+    public static <T> CompareBaseResultDTO compareJson(T actual, T expect, boolean compareType) {
+        CompareJsonUtils.compareBaseResultDTO = new CompareBaseResultDTO();
         boolean ignoreType = true;
         String ignore = null;
         CompareJsonUtils.compareJson(actual, expect, null, null, ignore, ignoreType, compareType);
-        return CompareJsonUtils.compareBaseResult;
+        return CompareJsonUtils.compareBaseResultDTO;
     }
 
-    public static <T> CompareBaseResult compareJson(T actual, T expect) {
-        CompareJsonUtils.compareBaseResult = new CompareBaseResult();
+    public static <T> CompareBaseResultDTO compareJson(T actual, T expect) {
+        CompareJsonUtils.compareBaseResultDTO = new CompareBaseResultDTO();
         boolean ignoreType = true;
         boolean compareType = true;
 
         String ignore = null;
         CompareJsonUtils.compareJson(actual, expect, null, null, ignore, ignoreType, compareType);
-        return CompareJsonUtils.compareBaseResult;
+        return CompareJsonUtils.compareBaseResultDTO;
     }
 
-    public static <T> CompareBaseResult compareJson(T actual, T expect, JSONObject check) {
+    public static <T> CompareBaseResultDTO compareJson(T actual, T expect, JSONObject check) {
         JSONObject checkWayJson = checkWay(check);
         boolean ignoreType = false;
         boolean compareType = true;
@@ -245,24 +246,24 @@ public class CompareJsonUtils {
 
         if ("".equals(ignore)){ ignore = null; }
 
-        CompareJsonUtils.compareBaseResult = new CompareBaseResult();
+        CompareJsonUtils.compareBaseResultDTO = new CompareBaseResultDTO();
 
-        CompareJsonUtils.compareBaseResult.setRetParameterDetail(check.toJSONString());
+        CompareJsonUtils.compareBaseResultDTO.setRetParameterDetail(check.toJSONString());
 
         CompareJsonUtils.compareJson(actual, expect, null, null, ignore, ignoreType, compareType);
 
-        return CompareJsonUtils.compareBaseResult;
+        return CompareJsonUtils.compareBaseResultDTO;
     }
 
     @Deprecated
-    public static <T> CompareBaseResult CompareJsonUtilsFactory(T actual, T expect, String ignore) {
-        CompareJsonUtils.compareBaseResult = new CompareBaseResult();
+    public static <T> CompareBaseResultDTO CompareJsonUtilsFactory(T actual, T expect, String ignore) {
+        CompareJsonUtils.compareBaseResultDTO = new CompareBaseResultDTO();
         boolean ignoreType = true;
         boolean compareType = true;
 
         CompareJsonUtils.compareJson(actual, expect, null, null, ignore, ignoreType, compareType);
 
-        return CompareJsonUtils.compareBaseResult;
+        return CompareJsonUtils.compareBaseResultDTO;
     }
 
 }

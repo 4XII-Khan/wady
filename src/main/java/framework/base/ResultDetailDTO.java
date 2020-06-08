@@ -1,14 +1,14 @@
-package framework.utils;
+package framework.base;
 
-public class ResultDetail {
+public class ResultDetailDTO {
     private String key;
     private Object actual;
     private Object expect;
     private String retMsg;
 
-    public ResultDetail() {}
+    public ResultDetailDTO() {}
 
-    public ResultDetail(String key, Object actual, Object expect, String retMsg) {
+    public ResultDetailDTO(String key, Object actual, Object expect, String retMsg) {
         this.key = key;
         this.actual = actual;
         this.expect = expect;

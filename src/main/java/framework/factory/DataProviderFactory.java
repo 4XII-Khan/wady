@@ -69,7 +69,6 @@ public class DataProviderFactory {
                     Iterable<Object> objIterable = yaml.loadAll(new FileInputStream(file));
                     for (Object object : objIterable) {
                         String objectString = JSON.toJSONString(object);
-                        System.out.println(objectString);
                         JSONObject jsonObject = JSONObject.parseObject(objectString);
                         if (jsonObject.containsKey("parameterization")){
                             ArrayList<JSONObject> jsonObjectArrayList = parameterComposition(jsonObject);

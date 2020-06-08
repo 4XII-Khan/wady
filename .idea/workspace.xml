@@ -25,11 +25,38 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89c4471a-9077-44eb-9174-ead7dd29620a" name="Default Changelist" comment="V1.0" />
+    <list default="true" id="89c4471a-9077-44eb-9174-ead7dd29620a" name="Default Changelist" comment="V1.0 更新ReadMe">
+      <change afterPath="$PROJECT_DIR$/src/main/java/framework/base/YamlDetailDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/framework/utils/WriterYaml.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/framework/factory/DataProviderFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/factory/DataProviderFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/framework/utils/CompareBaseResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/base/CompareBaseResultDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/framework/utils/CompareJsonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/utils/CompareJsonUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/framework/utils/Parameterization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/utils/Parameterization.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/framework/utils/ResultDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/base/ResultDetailDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/frameworkTest/CompareJsonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/frameworkTest/CompareJsonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/yaml/CompareJsonTest/compareJsonObjectTest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/yaml/CompareJsonTest/compareJsonObjectTest.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/framework/factory/DataProviderFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/framework/factory/DataProviderFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/framework/utils/CompareBaseResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/framework/utils/CompareJsonUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/framework/utils/CompareJsonUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/framework/utils/Parameterization.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/framework/utils/Parameterization.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/framework/utils/ResultDetail.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/wady.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/frameworkTest/CompareJsonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/frameworkTest/CompareJsonTest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -58,13 +85,29 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\code\wady" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/yaml" />
       <recent name="$PROJECT_DIR$/src/test/java" />
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.CompareJsonTest.compareJsonObjectTest">
+  <component name="RunManager" selected="Application.WriterYaml">
+    <configuration name="WriterYaml" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="framework.utils.WriterYaml" />
+      <module name="wady" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="framework.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CompareJsonTest.compareIntegerTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="wady" />
       <extension name="coverage">
@@ -76,24 +119,6 @@
       <option name="PACKAGE_NAME" value="frameworkTest" />
       <option name="MAIN_CLASS_NAME" value="frameworkTest.CompareJsonTest" />
       <option name="METHOD_NAME" value="compareIntegerTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CompareJsonTest.compareJsonArrayTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="wady" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="frameworkTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="frameworkTest" />
-      <option name="MAIN_CLASS_NAME" value="frameworkTest.CompareJsonTest" />
-      <option name="METHOD_NAME" value="compareJsonArrayTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -157,18 +182,18 @@
     </configuration>
     <list>
       <item itemvalue="TestNG.CompareJsonTest.compareJsonObjectTest" />
-      <item itemvalue="TestNG.CompareJsonTest.compareJsonArrayTest" />
       <item itemvalue="TestNG.CompareJsonTest.compareIntegerTest" />
       <item itemvalue="TestNG.CompareJsonTest.compareLongTest" />
       <item itemvalue="TestNG.CompareJsonTest.compareStringTest" />
+      <item itemvalue="Application.WriterYaml" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.WriterYaml" />
         <item itemvalue="TestNG.CompareJsonTest.compareJsonObjectTest" />
         <item itemvalue="TestNG.CompareJsonTest.compareStringTest" />
         <item itemvalue="TestNG.CompareJsonTest.compareLongTest" />
         <item itemvalue="TestNG.CompareJsonTest.compareIntegerTest" />
-        <item itemvalue="TestNG.CompareJsonTest.compareJsonArrayTest" />
       </list>
     </recent_temporary>
   </component>
@@ -185,6 +210,7 @@
       <workItem from="1591450350966" duration="3749000" />
       <workItem from="1591464906512" duration="1433000" />
       <workItem from="1591507511775" duration="19075000" />
+      <workItem from="1591631409315" duration="5087000" />
     </task>
     <task id="LOCAL-00001" summary="2020年6月7日01:47:47">
       <created>1591465869216</created>
@@ -214,7 +240,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591551278580</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="V1.0 更新ReadMe">
+      <created>1591631543413</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1591631543413</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,41 +268,61 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2020年6月7日01:47:47" />
     <MESSAGE value="V1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="V1.0" />
+    <MESSAGE value="V1.0 更新ReadMe" />
+    <option name="LAST_COMMIT_MESSAGE" value="V1.0 更新ReadMe" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1427" y="369" width="763" height="469" key="#Notifications" timestamp="1591465902678">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1427" y="369" width="763" height="469" key="#Notifications/0.0.2560.1400@0.0.2560.1400" timestamp="1591465902678" />
+    <state x="893" y="444" key="#com.intellij.ide.util.MemberChooser" timestamp="1591633230734">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="893" y="444" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400@0.0.2560.1400" timestamp="1591633230734" />
+    <state x="669" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1591632968381">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="669" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591632968381" />
     <state x="1142" y="266" key="CommitChangelistDialog2" timestamp="1591465843447">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1142" y="266" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1591465843447" />
-    <state width="1735" height="533" key="GridCell.Tab.0.bottom" timestamp="1591551325324">
+    <state width="1735" height="653" key="GridCell.Tab.0.bottom" timestamp="1591636416206">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1735" height="533" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591551325324" />
-    <state width="1735" height="533" key="GridCell.Tab.0.center" timestamp="1591551325324">
+    <state width="1735" height="653" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591636416206" />
+    <state width="1735" height="653" key="GridCell.Tab.0.center" timestamp="1591636416206">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1735" height="533" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591551325324" />
-    <state width="1735" height="533" key="GridCell.Tab.0.left" timestamp="1591551325324">
+    <state width="1735" height="653" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591636416206" />
+    <state width="1735" height="653" key="GridCell.Tab.0.left" timestamp="1591636416206">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1735" height="533" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591551325324" />
-    <state width="1735" height="533" key="GridCell.Tab.0.right" timestamp="1591551325324">
+    <state width="1735" height="653" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591636416206" />
+    <state width="1735" height="653" key="GridCell.Tab.0.right" timestamp="1591636416206">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1735" height="533" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591551325324" />
-    <state x="1136" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591551281462">
+    <state width="1735" height="653" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591636416206" />
+    <state x="1136" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591631549349">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1136" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591551281462" />
-    <state x="483" y="493" key="git4idea.merge.GitPullDialog" timestamp="1591551220988">
+    <state x="1136" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591631549349" />
+    <state x="483" y="493" key="git4idea.merge.GitPullDialog" timestamp="1591631499759">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="483" y="493" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591551220988" />
+    <state x="483" y="493" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591631499759" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/framework/utils/CreatFile.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="masterDetails">
     <states>

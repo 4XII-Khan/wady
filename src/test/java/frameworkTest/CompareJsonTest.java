@@ -1,16 +1,18 @@
 package frameworkTest;
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
 import com.alibaba.fastjson.JSONPath;
+import framework.base.CompareBaseResultDTO;
 import framework.factory.AbstractAiTestFramework;
-import framework.utils.CompareBaseResult;
 import framework.utils.CompareJsonUtils;
 
+import framework.utils.WriterYaml;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import javax.swing.*;
+import java.io.IOException;
 import java.util.Map;
 
 public class CompareJsonTest extends AbstractAiTestFramework {
@@ -30,12 +32,13 @@ public class CompareJsonTest extends AbstractAiTestFramework {
 
 
         // 统一的结果比对接口, 根据配置实现即可灵活选择、过滤比对方式 及精确、模糊校验角度.
-        CompareBaseResult compareBaseResult
+        CompareBaseResultDTO compareBaseResultDTO
             = CompareJsonUtils.compareJson(methodParameter, expectResult, paramsObj);
 
         // 结果断言
-        Assert.assertEquals(compareBaseResult.getRetCode(), 0,
-            String.valueOf(compareBaseResult.getRetValue()));
+        Assert.assertEquals(compareBaseResultDTO.getRetCode(), 0,
+            String.valueOf(compareBaseResultDTO.getRetValue()));
+
 
     }
 
@@ -52,14 +55,14 @@ public class CompareJsonTest extends AbstractAiTestFramework {
         JSONArray expectResult = (JSONArray) JSONPath.eval(paramsObj,"$.expectResult.expect");
 
         // 统一的结果比对接口, 根据配置实现即可灵活选择、过滤比对方式 及精确、模糊校验角度.
-        CompareBaseResult compareBaseResult
+        CompareBaseResultDTO compareBaseResultDTO
                 = CompareJsonUtils.compareJson(methodParameter, expectResult, paramsObj);
 
         // 结果断言
-        Assert.assertEquals(compareBaseResult.getRetCode(), 0,
-                String.valueOf(compareBaseResult.getRetValue()));
+        Assert.assertEquals(compareBaseResultDTO.getRetCode(), 0,
+                String.valueOf(compareBaseResultDTO.getRetValue()));
 
-        System.out.println("比对结果：" + JSONObject.toJSONString(compareBaseResult));
+        System.out.println("比对结果：" + JSONObject.toJSONString(compareBaseResultDTO));
     }
 
     @Test(dataProvider = "TestDataProvider")
@@ -75,14 +78,14 @@ public class CompareJsonTest extends AbstractAiTestFramework {
                 methodParameter+""+expectResult
         );
         // 统一的结果比对接口, 根据配置实现即可灵活选择、过滤比对方式 及精确、模糊校验角度.
-        CompareBaseResult compareBaseResult
+        CompareBaseResultDTO compareBaseResultDTO
                 = CompareJsonUtils.compareJson(methodParameter, expectResult, paramsObj);
 
         // 结果断言
-        Assert.assertEquals(compareBaseResult.getRetCode(), 0,
-                String.valueOf(compareBaseResult.getRetValue()));
+        Assert.assertEquals(compareBaseResultDTO.getRetCode(), 0,
+                String.valueOf(compareBaseResultDTO.getRetValue()));
 
-        System.out.println("比对结果：" + JSONObject.toJSONString(compareBaseResult));
+        System.out.println("比对结果：" + JSONObject.toJSONString(compareBaseResultDTO));
     }
 
     @Test(dataProvider = "TestDataProvider")
@@ -98,14 +101,14 @@ public class CompareJsonTest extends AbstractAiTestFramework {
                 methodParameter+""+expectResult
         );
         // 统一的结果比对接口, 根据配置实现即可灵活选择、过滤比对方式 及精确、模糊校验角度.
-        CompareBaseResult compareBaseResult
+        CompareBaseResultDTO compareBaseResultDTO
                 = CompareJsonUtils.compareJson(methodParameter, expectResult, paramsObj);
 
         // 结果断言
-        Assert.assertEquals(compareBaseResult.getRetCode(), 0,
-                String.valueOf(compareBaseResult.getRetValue()));
+        Assert.assertEquals(compareBaseResultDTO.getRetCode(), 0,
+                String.valueOf(compareBaseResultDTO.getRetValue()));
 
-        System.out.println("比对结果：" + JSONObject.toJSONString(compareBaseResult));
+        System.out.println("比对结果：" + JSONObject.toJSONString(compareBaseResultDTO));
     }
 
     @Test(dataProvider = "TestDataProvider")
@@ -121,13 +124,13 @@ public class CompareJsonTest extends AbstractAiTestFramework {
                 methodParameter+""+expectResult
         );
         // 统一的结果比对接口, 根据配置实现即可灵活选择、过滤比对方式 及精确、模糊校验角度.
-        CompareBaseResult compareBaseResult
+        CompareBaseResultDTO compareBaseResultDTO
                 = CompareJsonUtils.compareJson(methodParameter, expectResult, paramsObj);
 
         // 结果断言
-        Assert.assertEquals(compareBaseResult.getRetCode(), 0,
-                String.valueOf(compareBaseResult.getRetValue()));
+        Assert.assertEquals(compareBaseResultDTO.getRetCode(), 0,
+                String.valueOf(compareBaseResultDTO.getRetValue()));
 
-        System.out.println("比对结果：" + JSONObject.toJSONString(compareBaseResult));
+        System.out.println("比对结果：" + JSONObject.toJSONString(compareBaseResultDTO));
     }
 }
