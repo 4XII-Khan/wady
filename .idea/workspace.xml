@@ -25,19 +25,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="89c4471a-9077-44eb-9174-ead7dd29620a" name="Default Changelist" comment="2020年6月7日01:47:47">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/framework/utils/Parameterization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/framework/utils/Parameterization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/frameworkTest/CompareJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/frameworkTest/CompareJsonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareIntegerTest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/yaml/CompareJsonTest/compareIntegerTest.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareJsonArrayTest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/yaml/CompareJsonTest/compareJsonArrayTest.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareJsonObjectTest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/yaml/CompareJsonTest/compareJsonObjectTest.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareLongTest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/yaml/CompareJsonTest/compareLongTest.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/yaml/CompareJson/compareStringTest.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/yaml/CompareJsonTest/compareStringTest.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/framework/utils/Parameterization.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/framework/utils/Parameterization.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/frameworkTest/CompareJson.class" beforeDir="false" />
-    </list>
+    <list default="true" id="89c4471a-9077-44eb-9174-ead7dd29620a" name="Default Changelist" comment="V1.0" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -196,7 +184,7 @@
       <updated>1591450349607</updated>
       <workItem from="1591450350966" duration="3749000" />
       <workItem from="1591464906512" duration="1433000" />
-      <workItem from="1591507511775" duration="18773000" />
+      <workItem from="1591507511775" duration="19075000" />
     </task>
     <task id="LOCAL-00001" summary="2020年6月7日01:47:47">
       <created>1591465869216</created>
@@ -219,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591516701942</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="V1.0">
+      <created>1591551278580</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1591551278580</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +234,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="2020年6月7日01:47:47" />
-    <option name="LAST_COMMIT_MESSAGE" value="2020年6月7日01:47:47" />
+    <MESSAGE value="V1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="V1.0" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1427" y="369" width="763" height="469" key="#Notifications" timestamp="1591465902678">
@@ -250,30 +246,30 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1142" y="266" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1591465843447" />
-    <state width="1735" height="497" key="GridCell.Tab.0.bottom" timestamp="1591548239716">
+    <state width="1735" height="533" key="GridCell.Tab.0.bottom" timestamp="1591551325324">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1735" height="497" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591548239716" />
-    <state width="1735" height="497" key="GridCell.Tab.0.center" timestamp="1591548239716">
+    <state width="1735" height="533" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1591551325324" />
+    <state width="1735" height="533" key="GridCell.Tab.0.center" timestamp="1591551325324">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1735" height="497" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591548239716" />
-    <state width="1735" height="497" key="GridCell.Tab.0.left" timestamp="1591548239715">
+    <state width="1735" height="533" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1591551325324" />
+    <state width="1735" height="533" key="GridCell.Tab.0.left" timestamp="1591551325324">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1735" height="497" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591548239715" />
-    <state width="1735" height="497" key="GridCell.Tab.0.right" timestamp="1591548239716">
+    <state width="1735" height="533" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1591551325324" />
+    <state width="1735" height="533" key="GridCell.Tab.0.right" timestamp="1591551325324">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1735" height="497" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591548239716" />
-    <state x="1136" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591516706662">
+    <state width="1735" height="533" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1591551325324" />
+    <state x="1136" y="432" key="Vcs.Push.Dialog.v2" timestamp="1591551281462">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1136" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591516706662" />
-    <state x="483" y="493" key="git4idea.merge.GitPullDialog" timestamp="1591516671590">
+    <state x="1136" y="432" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1591551281462" />
+    <state x="483" y="493" key="git4idea.merge.GitPullDialog" timestamp="1591551220988">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="483" y="493" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591516671590" />
+    <state x="483" y="493" key="git4idea.merge.GitPullDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1591551220988" />
   </component>
   <component name="masterDetails">
     <states>
