@@ -11,8 +11,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.JSONPath;
 import org.apache.commons.lang3.StringUtils;
 
-import javax.swing.plaf.synth.SynthLookAndFeel;
-
 public class Parameterization {
 
     public static void parameterCombination(ArrayList<ArrayList<HashMap<String, String>>> inputList, int beginIndex,
@@ -54,10 +52,12 @@ public class Parameterization {
             }
             paramList.add(tmp);
         }
+
         ArrayList<HashMap<String, String>> parameterList = new ArrayList<>();
         ArrayList<ArrayList<HashMap<String, String>>> out = new ArrayList<>();
         parameterCombination(paramList, 0, parameterList, out);
         ArrayList<JSONObject> yamlBlock = new ArrayList<>();
+
         int i = 0 ;
         for (ArrayList<HashMap<String, String>> p : out) {
             JSONObject  parameterJson = JSONObject.parseObject(parameterString);
@@ -71,25 +71,15 @@ public class Parameterization {
                     if (JSONPath.contains(parameterJson, setKey)){
                         JSONPath.set(parameterJson, setKey, entry.getValue());
                     }
-//                        JSONPath.contains(paramsObj, setKey);
-//                    JSONPath.set(parameterJson, setKey, entry.getValue());
-//                    parameterString =
-//                        JsonPath.parse(parameterString).set("$."+entry.getKey(),
-//                            entry.getValue()).jsonString();
-
                 }
             }
-//            JSONObject parameterJson = JSONObject.parseObject(parameterString);
             paramsObj.put("parameter",parameterJson);
             System.out.println(parameterJson.toJSONString());
-
             JSONObject paramsObjClone = (JSONObject) paramsObj.clone();
             paramsObjClone.remove("parameterization");
             yamlBlock.add(paramsObjClone);
-
         }
         return yamlBlock;
-
     }
 
     public static ArrayList<JSONObject> sequentialComposition(JSONObject paramsObj) {
@@ -109,7 +99,6 @@ public class Parameterization {
                 tmp.add(map);
             }
             System.out.println(tmp.toString());
-
             paramList.add(tmp);
         }
         ArrayList<ArrayList<HashMap<String, String>>> outputArrayLists = new ArrayList<>();
@@ -132,8 +121,6 @@ public class Parameterization {
             System.out.println(index);
             for (HashMap<String, String> kv : p) {
                 for (Map.Entry<String, String> entry : kv.entrySet()) {
-//                    parameterString = JsonPath.parse(parameterString).set("$." + entry.getKey(), entry.getValue())
-//                        .jsonString();
                     System.out.println(entry.getKey()+":"+ entry.getValue());
                     if (JSONPath.contains(parameterJson, entry.getKey())){
                         JSONPath.set(parameterJson, entry.getKey(), entry.getValue());
@@ -141,8 +128,6 @@ public class Parameterization {
                 }
             }
             System.out.println(parameterJson.toJSONString());
-
-//            JSONObject sequentialJson = JSONObject.parseObject(parameterString);
             paramsObj.put("parameter",parameterJson);
             JSONObject paramsObjClone = (JSONObject) paramsObj.clone();
             paramsObjClone.remove("parameterization");

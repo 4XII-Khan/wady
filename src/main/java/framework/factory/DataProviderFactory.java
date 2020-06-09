@@ -10,7 +10,7 @@ import java.util.List;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
-import framework.utils.CreatFile;
+import framework.utils.CreateYamlDemo;
 import framework.utils.GetFilesUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.yaml.snakeyaml.Yaml;
@@ -51,18 +51,14 @@ public class DataProviderFactory {
         // 获取所有的用例文件
         List<String> useCaseFileNames = extractUseCaseFileNames(testClass, method);
         if (useCaseFileNames.size() < 1) {
-
             throw new RuntimeException(MessageFormat.format("测试数据缺失, 测试类className={0},测试方法 methodName={1}",
                 testClass.getName(), method.getName()));
         }
         Yaml yaml = new Yaml();
-
         // 各yaml文件中所有yaml配置块列表
         List<Object> yamlBlocks = new ArrayList<Object>();
-
         // 遍历所有yaml文件
         for (String useCaseFileName : useCaseFileNames) {
-
             try {
                 File file = new File(useCaseFileName);
                 if (file.exists()) {
@@ -75,12 +71,11 @@ public class DataProviderFactory {
                             yamlBlocks.addAll(jsonObjectArrayList);
                         }else {
                             yamlBlocks.add(jsonObject);
-
                         }
                     }
                 } else {
                     // 不存在则创建，提高测试数据文件创建效率，避免手动创建
-                    CreatFile.checkFileExistsToCreate(file);
+                    CreateYamlDemo.demo(useCaseFileName);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
@@ -88,7 +83,6 @@ public class DataProviderFactory {
         }
         // 定义一个二维数组，长度为配置块个数，一个配置块在二维数组中作为一个元素
         Object[][] result = new Object[yamlBlocks.size()][];
-
         // 填充二维数组
         for (int n = 0; n < yamlBlocks.size(); n++) {
             List<Object> tmp = new ArrayList<Object>();

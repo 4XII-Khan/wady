@@ -14,6 +14,7 @@ import org.apache.commons.lang3.StringUtils;
  * @create: 2020-06-06 10:35
  */
 public class ResultCheckWay {
+
     public static JSONObject checkWay(JSONObject paramsObj) {
         String precision = null;
         String key = null;
@@ -34,11 +35,7 @@ public class ResultCheckWay {
         }
 
         if (StringUtils.isNotBlank(precision)) {
-            if ("fuzzy".equals(precision)) {
-                jsonReturn.put("precision",false);
-            }else {
-                jsonReturn.put("precision",true);
-            }
+            jsonReturn.put("precision", !"fuzzy".equals(precision));
         }else {
             jsonReturn.put("precision",true);
         }
