@@ -1,52 +1,53 @@
 
----
-testcase: 验证 XX 功能是否符合预期
-
-# 参数化配置,针对parameter节点下，支持.链接，支持对某个节点下的数组特定索引
-parameterization:
-  jsonObjectDemo.Id: 12,22
-  jsonObjectDemo.sentenceDesc.desc: Connect,NotConnect
-  jsonObjectDemo.grade[0]: 99,88
-  string: ye,xian
-  integer: 4,5
-  expect.code: 期望结果1,期望结果2
-# 参数组合方式,非必填，支持顺序和排列组合，默认排列组合
-parameterCombination:
-# 参数配置
-parameter:
-  jsonObjectDemo: {"Id":"244","code":"Connect","sentenceDesc":{"desc":"","sentence":"你好"},"grade":[1,2,3,4]}
-  string: yexian
-  integer: 1
-# 期望结果配置
-expectResult:
-  expect: {"Id":"244","code":"Connect","sentenceDesc":{"desc":"描述","sentence":"你好"},"grade":[1,2,3,4]}
-# 校验方式，支持精确比较和非空校验，非必填
-check:
-  # 精度，支持精确校验、模糊经验，默认精准,非必填
-  precision: precision
-  # 关注 key，默认全校验,非必填
-  key:
-  # 校验方式：选择校验、过滤校验、默认全校验,非必填
-  way: choose
-
----
-testcase: 验证 XXX 功能是否符合预期
-# 参数配置
-parameter:
-  jsonObjecta: {"Id":"1","code":"Connect","name":"连接","sentenceDesc":"","type":"DEVICE","grade":[1,2,3,4]}
-  string: yexian
-  integer: 1
-# 期望结果配置
-expectResult:
-  expect: {"Id":"2","code":"Connect","name":"连接","sentenceDesc":"","type":"DEVICE","grade":[1,2,3,4]}
+#---
+#testcase: 验证 XX 功能是否符合预期
+#
+## 参数化配置,针对parameter节点下，支持.链接，支持对某个节点下的数组特定索引
+#parameterization:
+#  jsonObjectDemo.Id: 12,22
+#  jsonObjectDemo.sentenceDesc.desc: Connect,NotConnect
+#  jsonObjectDemo.grade[0]: 99,88
+#  string: ye,xian
+#  integer: 4,5
+#  expect.code: 期望结果1,期望结果2
+## 参数组合方式,非必填，支持顺序和排列组合，默认排列组合
+#parameterCombination:
+## 参数配置
+#parameter:
+#  jsonObjectDemo: {"Id":"244","code":"Connect","sentenceDesc":{"desc":"","sentence":"你好"},"grade":[1,2,3,4]}
+#  string: yexian
+#  integer: 1
+## 期望结果配置
+#expectResult:
+#  expect: {"Id":"244","code":"Connect","sentenceDesc":{"desc":"描述","sentence":"你好"},"grade":[1,2,3,4]}
+## 校验方式，支持精确比较和非空校验，非必填
+#check:
+#  # 精度，支持精确校验、模糊经验，默认精准,非必填
+#  precision: precision
+#  # 关注 key，默认全校验,非必填
+#  key:
+#  # 校验方式：选择校验、过滤校验、默认全校验,非必填
+#  way: choose
+#
+#---
+#testcase: 验证 XXX 功能是否符合预期
+## 参数配置
+#parameter:
+#  jsonObjecta: {"Id":"1","code":"Connect","name":"连接","sentenceDesc":"","type":"DEVICE","grade":[1,2,3,4]}
+#  string: yexian
+#  integer: 1
+## 期望结果配置
+#expectResult:
+#  expect: {"Id":"2","code":"Connect","name":"连接","sentenceDesc":"","type":"DEVICE","grade":[1,2,3,4]}
 
 ---
 testcase: 验证 XX 功能是否符合预期
 
 # 参数化配置
 parameterization:
-  jsonObjectDemo.sentenceDesc.desc: 数据驱动,参数化
+  jsonObjectDemo.sentenceDesc.desc: 入参参数化1,入参参数化2
   jsonObjectDemo.grade[0]: 99,88,77
+  expect.sentenceDesc.desc: 期望结果参数化1,期望结果参数化2
 # 参数组合方式,非必填，支持顺序和排列组合，默认排列组合
 parameterCombination: sequential
 # 参数配置

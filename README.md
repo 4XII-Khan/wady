@@ -9,7 +9,7 @@
 **V1.0 新特性** 
 
 - 数据驱动，基于Yaml 实现测试用例与测试数据的解耦。
-- 参数化，支持指定参数项的参数化，实现参数的排列组合、顺序组合，为低维护成本下实现高覆盖提供可能。
+- 参数化，支持指定参数项的参数化，实现参数的排列组合、顺序组合，为低维护成本下实现高覆盖提供可能，除了能够实现入参的参数化，也支持了对期望结果的参数设置。
 - 提供统一且唯一的数据驱动方法，支持根据测试类、测试方法在指定目录下自动加载对应的配置文件。
 - 提供统一的测试用例入参格式。
 - 提供统一灵活的结果比对方法，支持JsonObject、JsonArray、String、Integer等基本数据类型的精确、模糊比较。
@@ -178,7 +178,6 @@ expectResult:
 
 ```json
 第1组 参数组合：
-
 jsonObjectDemo.sentenceDesc.desc:数据驱动
 jsonObjectDemo.grade[0]:99
 第1组 参数组合回填原始参数：
@@ -197,7 +196,49 @@ jsonObjectDemo.grade[0]:77
 
 ```
 
+另外在这顺序组合的场景下，也支持了对期望结果的参数化设置，使得实现期望结果与入参保持一定的关联性，如下
 
+```yaml
+# 参数化配置
+parameterization:
+  jsonObjectDemo.sentenceDesc.desc: 入参参数化1,入参参数化2
+  jsonObjectDemo.grade[0]: 99,88,77
+  expect.sentenceDesc.desc: 期望结果参数化1,期望结果参数化2
+# 参数组合方式,非必填，支持顺序和排列组合，默认排列组合
+parameterCombination: sequential
+# 参数配置
+parameter:
+  # 参数配置
+  jsonObjectDemo: {"Id":"244","code":"Connect","sentenceDesc":{"desc":"","sentence":"你好"},"grade":[59, 33]}
+# 期望配置
+expectResult:
+  expect: {"Id":"244","code":"Connect","sentenceDesc":{"desc":"描述","sentence":"你好"},"grade":[77, 33]}
+```
+
+根据上述配置，我们不仅可以将每组参数取相同索引位置的元素进行组合，也一同实现了相同所以位置的期望结果的组合。如上数据配置可生成以下3种参数组合，并回填至原始参数中，如下。
+
+```json
+第1组 参数组合：
+取值：expect.sentenceDesc.desc:期望结果参数化1
+取值：jsonObjectDemo.sentenceDesc.desc:入参参数化1
+取值：jsonObjectDemo.grade[0]:99
+参数：{"jsonObjectDemo":{"code":"Connect","grade":["99",33],"sentenceDesc":{"sentence":"你好","desc":"入参参数化1"},"Id":"244"}}
+期望：{"expect":{"code":"Connect","grade":[77,33],"sentenceDesc":{"sentence":"你好","desc":"期望结果参数化1"},"Id":"244"}}
+
+第2组 参数组合：
+取值：expect.sentenceDesc.desc:期望结果参数化2
+取值：jsonObjectDemo.sentenceDesc.desc:入参参数化2
+取值：jsonObjectDemo.grade[0]:88
+参数：{"jsonObjectDemo":{"code":"Connect","grade":["88",33],"sentenceDesc":{"sentence":"你好","desc":"入参参数化2"},"Id":"244"}}
+期望：{"expect":{"code":"Connect","grade":[77,33],"sentenceDesc":{"sentence":"你好","desc":"期望结果参数化2"},"Id":"244"}}
+
+第3组 参数组合：
+取值：jsonObjectDemo.grade[0]:77
+参数：{"jsonObjectDemo":{"code":"Connect","grade":["77",33],"sentenceDesc":{"sentence":"你好","desc":"入参参数化2"},"Id":"244"}}
+期望：{"expect":{"code":"Connect","grade":[77,33],"sentenceDesc":{"sentence":"你好","desc":"期望结果参数化2"},"Id":"244"}}
+```
+
+需要注意的是，期望结果的参数化，建议只应用于当parameterCombination为sequential时。
 
 #### 3.1.3 比对方式特性
 
