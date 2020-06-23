@@ -38,7 +38,12 @@ public class Parameterization {
 
         String parameterizationString = JSON.toJSONString(paramsObj.get("parameterization"));
         JSONObject parameterizationJson = JSONObject.parseObject(parameterizationString);
+
         String parameterString = JSON.toJSONString(paramsObj.get("parameter"));
+        JSONObject parameterJson = JSONObject.parseObject(parameterString);
+
+        String expectString = JSON.toJSONString(paramsObj.get("expectResult"));
+        JSONObject expectJson = JSONObject.parseObject(expectString);
 
         ArrayList<ArrayList<HashMap<String, String>>> paramList = new ArrayList<>();
         for (String i : parameterizationJson.keySet()) {
@@ -60,21 +65,25 @@ public class Parameterization {
 
         int i = 0 ;
         for (ArrayList<HashMap<String, String>> p : out) {
-            JSONObject  parameterJson = JSONObject.parseObject(parameterString);
-            i ++;
-            System.out.println(i);
+            i ++ ;
+            System.out.println("\n创建ID："+i);
             for (HashMap<String, String> kv : p) {
                 for (Map.Entry<String, String> entry : kv.entrySet()) {
                     String setKey = "$."+entry.getKey();
-                    System.out.println("$."+entry.getKey()+":"+entry.getValue());
+                    System.out.println("取值："+"$."+entry.getKey()+":"+entry.getValue());
                     // 如果不存在则 跳过
                     if (JSONPath.contains(parameterJson, setKey)){
                         JSONPath.set(parameterJson, setKey, entry.getValue());
+                    }else if (JSONPath.contains(expectJson, setKey)){
+                        JSONPath.set(expectJson, setKey, entry.getValue());
                     }
                 }
             }
             paramsObj.put("parameter",parameterJson);
-            System.out.println(parameterJson.toJSONString());
+            paramsObj.put("expectResult",expectJson);
+            System.out.println("参数："+parameterJson.toJSONString());
+            System.out.println("期望："+expectJson.toJSONString());
+
             JSONObject paramsObjClone = (JSONObject) paramsObj.clone();
             paramsObjClone.remove("parameterization");
             yamlBlock.add(paramsObjClone);
@@ -85,7 +94,13 @@ public class Parameterization {
     public static ArrayList<JSONObject> sequentialComposition(JSONObject paramsObj) {
         String parameterizationString = JSON.toJSONString(paramsObj.get("parameterization"));
         JSONObject parameterizationJson = JSONObject.parseObject(parameterizationString);
+
         String parameterString = JSON.toJSONString(paramsObj.get("parameter"));
+        JSONObject parameterJson = JSONObject.parseObject(parameterString);
+
+        String expectString = JSON.toJSONString(paramsObj.get("expectResult"));
+        JSONObject expectJson = JSONObject.parseObject(expectString);
+
         ArrayList<ArrayList<HashMap<String, String>>> paramList = new ArrayList<>();
         int maxLength = 0;
         for (String key : parameterizationJson.keySet()) {
@@ -98,7 +113,6 @@ public class Parameterization {
                 map.put(key, ignore);
                 tmp.add(map);
             }
-            System.out.println(tmp.toString());
             paramList.add(tmp);
         }
         ArrayList<ArrayList<HashMap<String, String>>> outputArrayLists = new ArrayList<>();
@@ -116,19 +130,22 @@ public class Parameterization {
         ArrayList<JSONObject> yamlBlock = new ArrayList<>();
         int index = 0;
         for (ArrayList<HashMap<String, String>> p : outputArrayLists) {
-            JSONObject parameterJson = JSONObject.parseObject(parameterString);
             index++;
-            System.out.println(index);
+            System.out.println("\n创建ID："+index);
             for (HashMap<String, String> kv : p) {
                 for (Map.Entry<String, String> entry : kv.entrySet()) {
-                    System.out.println(entry.getKey()+":"+ entry.getValue());
+                    System.out.println("取值："+entry.getKey()+":"+ entry.getValue());
                     if (JSONPath.contains(parameterJson, entry.getKey())){
                         JSONPath.set(parameterJson, entry.getKey(), entry.getValue());
+                    }else if (JSONPath.contains(expectJson, entry.getKey())){
+                        JSONPath.set(expectJson, entry.getKey(), entry.getValue());
                     }
                 }
             }
-            System.out.println(parameterJson.toJSONString());
             paramsObj.put("parameter",parameterJson);
+            paramsObj.put("expectResult",expectJson);
+            System.out.println("参数："+parameterJson.toJSONString());
+            System.out.println("期望："+expectJson.toJSONString());
             JSONObject paramsObjClone = (JSONObject) paramsObj.clone();
             paramsObjClone.remove("parameterization");
             yamlBlock.add(paramsObjClone);

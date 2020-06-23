@@ -9,6 +9,7 @@ parameterization:
   jsonObjectDemo.grade[0]: 99,88
   string: ye,xian
   integer: 4,5
+  expect.code: 期望结果1,期望结果2
 # 参数组合方式,非必填，支持顺序和排列组合，默认排列组合
 parameterCombination:
 # 参数配置
