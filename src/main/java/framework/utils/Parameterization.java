@@ -13,7 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 
 public class Parameterization {
 
-    public static void parameterCombination(ArrayList<ArrayList<HashMap<String, String>>> inputList, int beginIndex,
+    private static void parameterCombination(ArrayList<ArrayList<HashMap<String, String>>> inputList, int beginIndex,
         ArrayList<HashMap<String, String>> parameterList, ArrayList<ArrayList<HashMap<String, String>>> outputList) {
         // 判断是否完成一次参数组合
         if (beginIndex == inputList.size()) {
@@ -34,16 +34,12 @@ public class Parameterization {
         }
     }
 
-    public static ArrayList<JSONObject> permutationCombination(JSONObject paramsObj) {
+    private static ArrayList<JSONObject> permutationCombination(JSONObject paramsObj) {
 
         String parameterizationString = JSON.toJSONString(paramsObj.get("parameterization"));
         JSONObject parameterizationJson = JSONObject.parseObject(parameterizationString);
-
         String parameterString = JSON.toJSONString(paramsObj.get("parameter"));
-        JSONObject parameterJson = JSONObject.parseObject(parameterString);
-
         String expectString = JSON.toJSONString(paramsObj.get("expectResult"));
-        JSONObject expectJson = JSONObject.parseObject(expectString);
 
         ArrayList<ArrayList<HashMap<String, String>>> paramList = new ArrayList<>();
         for (String i : parameterizationJson.keySet()) {
@@ -67,6 +63,9 @@ public class Parameterization {
         for (ArrayList<HashMap<String, String>> p : out) {
             i ++ ;
             System.out.println("\n创建ID："+i);
+            JSONObject parameterJson = JSONObject.parseObject(parameterString);
+            JSONObject expectJson = JSONObject.parseObject(expectString);
+
             for (HashMap<String, String> kv : p) {
                 for (Map.Entry<String, String> entry : kv.entrySet()) {
                     String setKey = "$."+entry.getKey();
@@ -91,15 +90,13 @@ public class Parameterization {
         return yamlBlock;
     }
 
-    public static ArrayList<JSONObject> sequentialComposition(JSONObject paramsObj) {
+    private static ArrayList<JSONObject> sequentialComposition(JSONObject paramsObj) {
         String parameterizationString = JSON.toJSONString(paramsObj.get("parameterization"));
         JSONObject parameterizationJson = JSONObject.parseObject(parameterizationString);
 
         String parameterString = JSON.toJSONString(paramsObj.get("parameter"));
-        JSONObject parameterJson = JSONObject.parseObject(parameterString);
 
         String expectString = JSON.toJSONString(paramsObj.get("expectResult"));
-        JSONObject expectJson = JSONObject.parseObject(expectString);
 
         ArrayList<ArrayList<HashMap<String, String>>> paramList = new ArrayList<>();
         int maxLength = 0;
@@ -125,13 +122,14 @@ public class Parameterization {
             }
             outputArrayLists.add(disposable);
         }
-        System.out.println(outputArrayLists.toString());
-
         ArrayList<JSONObject> yamlBlock = new ArrayList<>();
         int index = 0;
         for (ArrayList<HashMap<String, String>> p : outputArrayLists) {
             index++;
             System.out.println("\n创建ID："+index);
+            JSONObject parameterJson = JSONObject.parseObject(parameterString);
+            JSONObject expectJson = JSONObject.parseObject(expectString);
+
             for (HashMap<String, String> kv : p) {
                 for (Map.Entry<String, String> entry : kv.entrySet()) {
                     System.out.println("取值："+entry.getKey()+":"+ entry.getValue());
