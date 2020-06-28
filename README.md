@@ -1,8 +1,18 @@
 # wady（绿洲）接口自动化测试
 
-# 1 简介
+## 1 简介
 
-基于接口测试场景，解决测试用例开发、维护成本高的主要矛盾。
+
+
+基于接口测试场景，一定程度解决以下几类问题：
+
+- 测试数据与代码耦合程度较高，用例的可扩展性和可复用性较低。
+
+- 测试覆盖度与测试用例维护成本之间的线性关系。
+
+- 缺乏灵活统一的期望比对方式，存在较高的用例开发成本（重复度高）。
+
+
 
 ## 2 特性
 
@@ -25,7 +35,7 @@
 
 ### 3.1 数据配置
 
-数据配置，一图千言，如下：
+数据配置，一图抵千言，如下：
 
 ![IMG_3554](img/IMG_3554.JPG)
 
@@ -265,7 +275,7 @@ check:
 
 ### 3.2 测试脚本
 
-测试脚本，一图千言，如下：
+测试脚本，一图抵千言，如下：
 
 ![IMG_3553](img/IMG_3553.JPG)
 
@@ -327,9 +337,9 @@ Assert.assertEquals(compareBaseResultDTO.getRetCode(), 0,String.valueOf(compareB
 
 当实际结果与期望结果存在不一致的情况时，会同时输出不一致的具体信息，如下
 
-![2C65A5D8-41E9-4C2C-8E96-E7914D12B285](README.assets/2C65A5D8-41E9-4C2C-8E96-E7914D12B285.png)
+![IMG_3555](img/IMG_3555.JPG)
 
-![5B4680E1-C773-4E13-BDA3-0D41C7BDC2FD](img/5B4680E1-C773-4E13-BDA3-0D41C7BDC2FD.png)
+
 
 ## 4 实例
 
@@ -340,7 +350,6 @@ Assert.assertEquals(compareBaseResultDTO.getRetCode(), 0,String.valueOf(compareB
 ```yaml
 ---
 testcase: 验证 XX 功能是否符合预期
-
 # 参数化配置
 parameterization:
   jsonObjectDemo.sentenceDesc.desc: 数据驱动,参数化
